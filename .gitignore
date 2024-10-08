@@ -1,0 +1,35 @@
+# VS Code設定ファイル
+.vscode/
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+
+# ログファイル
+*.log
+
+# 一時ファイル
+*.tmp
+
+# Node.js（将来的に使用する可能性がある場合）
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ビルド出力（将来的に使用する可能性がある場合）
+/dist
+
+# 環境設定ファイル（将来的に使用する可能性がある場合）
+.env
+.env.local
+.env.*.local
+
+# エディタ固有のファイル
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# バックアップファイル
+*.bak
+*.backup

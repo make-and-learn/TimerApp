@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- 文書の文字エンコーディングを指定 -->
+    <meta charset="UTF-8">
+    <!-- レスポンシブデザイン用のビューポート設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 検索エンジン用の説明文 -->
+    <meta name="description" content="シンプルで使いやすいタイマーアプリケーション">
+    <!-- ページのタイトル -->
+    <title>シンプルタイマー</title>
+    <!-- CSSファイルのリンク -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- メインコンテンツを囲むコンテナ -->
+    <div class="container">
+        <!-- ページの見出し -->
+        <h1>シンプルタイマー</h1>
+        <!-- タイマーの表示領域（aria-liveは画面読み上げ用） -->
+        <div id="timer" aria-live="polite">00:00:00</div>
+        <!-- 時間入力フォーム -->
+        <div class="input-container">
+            <!-- 時間の入力フィールド -->
+            <label for="hours">時間:</label>
+            <input type="number" id="hours" min="0" max="23" value="0" aria-label="時間">
+            <!-- 分の入力フィールド -->
+            <label for="minutes">分:</label>
+            <input type="number" id="minutes" min="0" max="59" value="0" aria-label="分">
+            <!-- 秒の入力フィールド -->
+            <label for="seconds">秒:</label>
+            <input type="number" id="seconds" min="0" max="59" value="0" aria-label="秒">
+        </div>
+        <!-- ボタン群 -->
+        <div class="button-container">
+            <!-- タイマー開始ボタン -->
+            <button id="startBtn" aria-label="タイマー開始">開始</button>
+            <!-- タイマー停止ボタン（初期状態では無効） -->
+            <button id="stopBtn" disabled aria-label="タイマー停止">停止</button>
+            <!-- タイマーリセットボタン -->
+            <button id="resetBtn" aria-label="タイマーリセット">リセット</button>
+        </div>
+    </div>
+    <!-- アラーム音声ファイル（事前に読み込み） -->
+    <audio id="alarmSound" src="assets/alarm.mp3" preload="auto"></audio>
+    <!-- JavaScriptファイルの読み込み（モジュールとして） -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

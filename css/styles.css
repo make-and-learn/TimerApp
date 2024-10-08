@@ -1,0 +1,122 @@
+/* グローバル変数の定義 */
+:root {
+    --primary-color: #4a90e2;      /* メインカラー（ボタンなどに使用） */
+    --secondary-color: #f0f0f0;    /* 背景色 */
+    --text-color: #333;            /* 通常のテキストカラー */
+    --button-hover-color: #357abd; /* ボタンにマウスを乗せたときの色 */
+    --button-disabled-color: #cccccc; /* 無効化されたボタンの色 */
+}
+
+/* すべての要素に対する基本設定 */
+* {
+    box-sizing: border-box; /* パディングとボーダーを要素のサイズに含める */
+    margin: 0;  /* 外側の余白をゼロに */
+    padding: 0; /* 内側の余白をゼロに */
+}
+
+/* ページ全体のスタイル設定 */
+body {
+    font-family: 'Arial', sans-serif; /* フォントファミリーの指定 */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center;     /* 垂直方向の中央揃え */
+    min-height: 100vh;       /* 最小の高さをビューポートの高さに設定 */
+    background-color: var(--secondary-color); /* 背景色の設定 */
+    color: var(--text-color); /* テキストの色を設定 */
+}
+
+/* メインコンテンツを囲むコンテナのスタイル */
+.container {
+    background-color: white; /* 背景を白に */
+    padding: 2rem; /* 内側の余白を設定 */
+    border-radius: 10px;     /* 角を丸くする */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+    text-align: center; /* テキストを中央揃えに */
+}
+
+/* 見出し（h1）のスタイル */
+h1 {
+    margin-bottom: 1rem; /* 下側の余白を設定 */
+    color: var(--primary-color); /* メインカラーを使用 */
+}
+
+/* タイマー表示部分のスタイル */
+#timer {
+    font-size: 3rem; /* 大きめのフォントサイズ */
+    margin: 1rem 0; /* 上下の余白を設定 */
+    font-weight: bold; /* 太字に */
+}
+
+/* 時間入力部分を囲むコンテナのスタイル */
+.input-container {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向も中央揃え */
+    margin-bottom: 1rem; /* 下側の余白を設定 */
+}
+
+/* 時間入力フィールドのスタイル */
+.input-container input {
+    width: 50px; /* 幅を固定 */
+    text-align: center; /* テキストを中央揃え */
+    margin: 0 0.5rem; /* 左右の余白を設定 */
+    padding: 0.5rem; /* 内側の余白を設定 */
+    border: 1px solid #ccc; /* 枠線を設定 */
+    border-radius: 4px; /* 角を少し丸く */
+}
+
+/* 入力フィールドのラベルのスタイル */
+.input-container label {
+    font-size: 0.9rem; /* フォントサイズを少し小さく */
+}
+
+/* ボタンを囲むコンテナのスタイル */
+.button-container {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* 中央揃え */
+    gap: 0.5rem; /* ボタン間の間隔を設定 */
+}
+
+/* ボタンの基本スタイル */
+button {
+    font-size: 1rem; /* フォントサイズ */
+    padding: 0.5rem 1rem; /* 内側の余白 */
+    cursor: pointer; /* マウスカーソルをポインターに */
+    background-color: var(--primary-color); /* 背景色 */
+    color: white; /* テキストを白に */
+    border: none; /* 枠線を消す */
+    border-radius: 4px; /* 角を丸く */
+    transition: background-color 0.3s ease; /* 背景色の変化をなめらかに */
+}
+
+/* ホバー時のボタンスタイル（無効化されていない場合） */
+button:hover:not(:disabled) {
+    background-color: var(--button-hover-color); /* ホバー時の色に変更 */
+}
+
+/* 無効化されたボタンのスタイル */
+button:disabled {
+    cursor: not-allowed; /* カーソルを禁止マークに */
+    opacity: 0.6; /* 透明度を下げて薄く表示 */
+    background-color: var(--button-disabled-color); /* 無効時の色に変更 */
+}
+
+/* レスポンシブデザイン: 画面幅が480px以下の場合のスタイル */
+@media (max-width: 480px) {
+    .container {
+        width: 90%; /* コンテナの幅を画面の90%に */
+        padding: 1rem; /* パディングを小さく */
+    }
+
+    #timer {
+        font-size: 2rem; /* タイマーの文字サイズを小さく */
+    }
+
+    .input-container {
+        flex-direction: column; /* 入力フィールドを縦に並べる */
+    }
+
+    .input-container input {
+        margin: 0.5rem 0; /* 上下の余白を設定 */
+    }
+}
